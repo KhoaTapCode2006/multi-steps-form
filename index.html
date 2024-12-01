@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./themify-icons/themify-icons.css">
+  <title>Multi Step Form</title>
+</head>
+<body>
+  <div id="background"></div>
+  <div id="main">
+    <div id="main_container">
+      <div id="step_container">
+
+
+        <div id="step_box">
+          <div id="step_number_1" class="step_number active">1</div>
+          <div class="step_description">
+            <div class="ord_number">STEP 1</div>
+            <div class="title">YOUR INFO</div>
+          </div>
+        </div>
+
+<div id="step_box">
+          <div id="step_number_2" class="step_number">2</div>
+          <div class="step_description">
+            <div class="ord_number">STEP 2</div>
+            <div class="title">SELECT PLAN</div>
+          </div>
+        </div>
+
+        <div id="step_box">
+          <div id="step_number_3" class="step_number">3</div>
+          <div class="step_description">
+            <div class="ord_number">STEP 3</div>
+            <div class="title">ADD-ONS</div>
+          </div>
+        </div>
+
+        <div id="step_box">
+          <div id="step_number_4" class="step_number">4</div>
+          <div class="step_description">
+            <div class="ord_number">STEP 4</div>
+            <div class="title">SUMMARY</div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="form_container_main" >
+        <div id="title_step_1" class="title_box active">
+          <div class="title">Personal info</div>
+          <div class="instructions">Please provide your name, email address, and phone number</div>
+        </div>
+
+        <div id="title_step_2" class="title_box">
+          <div class="title">Select your plan</div>
+          <div class="instructions">You have the option of monthly or yearly billing</div>
+        </div>
+
+        <div id="title_step_3" class="title_box">
+          <div class="title">Pick add-ons</div>
+          <div class="instructions">Add-ons help enhance your gaming experience</div>
+        </div>
+
+
+        <div id="title_step_4" class="title_box">
+          <div class="title">Personal info</div>
+          <div class="instructions">Please provide your name, email address, and phone number</div>
+        </div>
+
+        
+
+        <div id="content_step_1" class="content_box active">
+          <div class="title">Name</div>
+          <div style="float:right;">
+            <div class="error error_name_form" id="error_name_form">This field is required</div>
+          </div>
+          <input type="text" class="input_form step-1 " id="name_form" placeholder="e.g. Stephen King" onblur="getName()">
+
+          <div class="title">Email Address</div>
+          <div style="float:right;">
+            <div class="error error_email_form" id="error_email_form">This field is required</div>
+          </div>
+          <input type="text" class="input_form step-1 " id="email_form" placeholder="e.g. Stephen King" onblur="getEmail()">
+
+          <div class="title">Phone Number</div>
+          <div style="float:right;">
+            <div class="error error_phone_form" id="error_phone_form">This field is required</div>
+          </div>
+          <input type="text" class="input_form step-1 " id="phone_form" placeholder="e.g. Stephen King" onblur="getPhone()">
+
+          
+        </div>
+
+         
+        <div id="content_step_2" class="content_box  " style="margin-bottom: 97px">
+          <div id="plan_box">
+            <div class="box active" id="arcade" type="button" onclick="arcade_choice()">
+              <img src="./assets/images/icon-arcade.svg" alt="" class="icon">
+              <div class="title">Arcade</div>
+              <div id="arcade-price" class="price">$9/mo</div>
+              <div class="sales">2 months free</div>
+            </div>
+
+            <div class="box advanced" id="advanced" type="button" onclick="advanced_choice()" >
+              <img src="./assets/images/icon-advanced.svg" alt="" class="icon">
+              <div class="title">Advanced</div>
+              <div id="advanced-price" class="price">$12/mo</div>
+              <div class="sales">2 months free</div>
+
+            </div>
+
+            <div class="box pro" id="pro" type="button" onclick="pro_choice()">
+              <img src="./assets/images/icon-pro.svg" alt="" class="icon">
+              <div class="title" style="display:block;">Pro</div>
+              <div id="pro-price" class="price">$15/mo</div>
+              <div class="sales">2 months free</div>
+
+            </div>
+          </div>
+
+          <div id="month_year_option_box" >     
+              <div id="monthly">Monthly</div>
+           <div id="switcher" type="button" onclick="switcher_sliding()">
+            <div id="switcher-slider"></div>
+           </div>
+           <div id="yearly">Yearly</div>
+          </div>
+
+        </div>
+
+
+       <div id="content_step_3" class="content_box " style="margin-bottom: 117px">
+        <div id="add-ons-container">
+
+          <div id="add-on-1" class="add-on-box" type ="button" onclick="addOnChosen1()">
+         <div class="container-checkbox">
+        <span id="checkbox-1" class="check-box" >
+        <img src="./assets/images/icon-checkmark.svg" alt="">
+        </span>
+         </div>
+         <div class="information">
+          <div class="title">Online service</div>
+          <div class="description">Access to multiplayer games</div>
+         </div>
+         
+         <div style="display:flex; align-items: center; justify-content: center">
+          <div id="add-on-price-1" class="price">+$1/mo</div>
+        </div>
+          </div>
+
+          <div id="add-on-2" class="add-on-box" type="button" onclick="addOnChosen2()">
+            <div class="container-checkbox">
+           <span id="checkbox-2" class="check-box" >
+            <img src="./assets/images/icon-checkmark.svg" alt="">
+           </span>
+            </div>
+            <div class="information">
+             <div class="title">Large Storage</div>
+             <div class="description">Extra 1TB of cloud save</div>
+            </div>
+            
+            <div style="display:flex; align-items: center; justify-content: center">
+             <div id="add-on-price-2" class="price">+$2/mo</div>
+           </div>
+             </div>
+
+             <div id="add-on-3" class="add-on-box" type="button" onclick="addOnChosen3()">
+              <div class="container-checkbox">
+             <span id="checkbox-3" class="check-box">
+              <img src="./assets/images/icon-checkmark.svg" alt="">
+
+             </span>
+              </div>
+              <div class="information">
+               <div class="title">Customizable profile</div>
+               <div class="description">Custom theme on your profile</div>
+              </div>
+              
+              <div style="display:flex; align-items: center; justify-content: center">
+               <div id="add-on-price-3" class="price">+$2 /mo</div>
+             </div>
+               </div>
+
+        </div>
+       </div>
+
+
+
+       <div id="content_step_4" class="content_box ">
+      <div class="summary_container">
+
+        <div class="plan_chosen " id="arcade-chosen">
+          <div style="display: inline-block;">
+            <div class="title">
+              <div id="arcade_title">Arcade (Monthly)</div>
+              <div class="change">Change</div>
+            </div>
+           
+          </div>
+          <div class="price_box" >
+            <div class="price" id="price-planArcade">$9/mo</div>
+          </div>
+        </div>
+
+        <div class="plan_chosen" id="pro-chosen">
+          <div style="display: inline-block;">
+            <div class="title">
+              <div id="pro_title">Pro (Monthly)</div>
+              <div class="change">Change</div>
+            </div>
+           
+          </div>
+          <div class="price_box">
+            <div class="price" id="price-planPro">$12/mo</div>
+          </div>
+        </div>
+
+        <div class="plan_chosen" id="advanced-chosen">
+          <div style="display: inline-block;">
+            <div class="title">
+              <div id="advanced_title">Advanced (Monthly)</div>
+              <div class="change">Change</div>
+            </div>
+           
+          </div>
+          <div class="price_box">
+            <div class="price" id="price-planAdvanced">$15/mo</div>
+          </div>
+        </div>
+ 
+
+
+        <div class="add_on_chosen " id="online-service">
+          <div class="title">Online service</div>
+          <div style="display:flex; align-items: center; justify-content: end;">
+            <div class="price" id="price-addOn1">+1$/mo</div>
+          </div>
+        </div>
+
+        <div class="add_on_chosen " id="larger-storage">
+          <div class="title">Larger storage</div>
+          <div style="display:flex; align-items: center; justify-content: end;">
+            <div class="price" id="price-addOn2">+2$/mo</div>
+          </div>
+        </div>
+
+        <div class="add_on_chosen " id="customizable-profile">
+          <div class="title">Customizable profile</div>
+          <div style="display:flex; align-items: center; justify-content: end;">
+            <div class="price" id="price-addOn3">+2$/mo</div>
+          </div>
+        </div>
+
+       
+
+        
+      </div>
+
+      <div class="total_price_box">
+        <div class="title">Total (per month)</div>
+        <div style="display:flex; justify-content: end; align-items: center; ">
+          <div class="total_price" id="total_price_final">+12$/mo</div>
+        </div>
+      </div>
+       </div>
+
+
+        <div id="goback-step-2" class="goback-button" type="button" onclick="goBackStep1()">Go back</div>
+        <div id="goback-step-3" class="goback-button" type="button" onclick="goBackStep2()">Go back</div>
+        <div id="goback-step-4" class="goback-button" type="button" onclick="goBackStep3()">Go back</div>
+       
+        <div style="float:right;">
+
+        <div class="next-button active" id="button-step-1" type="button" onclick="check_step1()">Next Step</div>
+        <div class="next-button " id="button-step-2" type="button" onclick="check_step2()">Next Step</div>
+        <div class="next-button" id="button-step-3" type="button" onclick="check_step3()">Next Step</div>
+        <div class="next-button" id="button-step-4" type="button" onclick="check_step4()">Next Step</div>
+      
+      </div>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
